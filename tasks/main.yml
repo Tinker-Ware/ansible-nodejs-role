@@ -25,7 +25,7 @@
     - nodejs-install-additional
 
 - name: add repository and install its signing key
-  shell: curl -sL https://deb.nodesource.com/setup_{{ nodejs_version_map[nodejs_version] }} | bash -
+  shell: curl -sL http://deb.nodesource.com/setup_{{ nodejs_version_map[nodejs_version] }} | bash -
   args:
     creates: /etc/apt/sources.list.d/nodesource.list
   tags:
@@ -33,6 +33,7 @@
     - nodejs
     - nodejs-install
     - nodejs-install-add-repository
+  become: yes
 
 - name: install
   apt:
