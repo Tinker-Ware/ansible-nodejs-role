@@ -45,6 +45,11 @@
     - nodejs-install
     - nodejs-install-install
 
+- name: install npm 
+  apt:
+    name: npm
+  become: yes
+
 - name: install node.js packages (globally)
   npm:
     name: "{{ item.name }}"
