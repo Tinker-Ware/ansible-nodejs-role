@@ -15,3 +15,4 @@ nodejs_version_map:
 
 nodejs_dependencies:
   - curl
+  - software-properties-common
